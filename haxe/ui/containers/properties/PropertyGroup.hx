@@ -178,8 +178,8 @@ private class Builder extends CompositeBuilder {
         var container = event.target.findAncestor("property-group-item-editor-container", Box, "css");
         var index = _propertyGroupContents.getComponentIndex(container);
         var label = _propertyGroupContents.getComponentAt(index - 1);
-        label.hide();
-        container.hide();
+        if (label != null) label.hide();
+        if (container != null) container.hide();
     }
 
     private function onPropertyEnabled(event:UIEvent) {
